@@ -2,19 +2,26 @@ import "./App.css"
 import { useState } from "react"
 
 function App() {
-  const [count, setCount] = useState(4)
-  function decreaseCount() {
-    setCount((prevCount) => prevCount - 1)
-  }
-  function increaseCount() {
-    setCount((prevCount) => prevCount + 1)
-  }
+  const [counter, setCounter] = useState(0)
+  // function decreaseCounter() {
+  //   setCounter((prevCounter) => prevCounter - 1)
+  // }
+  // function increaseCounter() {
+  //   setCounter((prevCounter) => prevCounter + 1)
+  // }
 
   return (
     <div className="App">
-      <button onClick={decreaseCount}>-</button>
-      <span>{count}</span>
-      <button onClick={increaseCount}>+</button>
+      <header className="App-header" style={{ flexDirection: "row" }}>
+        {/* using the callbacks defined above */}
+        {/* <button onClick={decreaseCounter}>-</button>
+        <span style={{ margin: "10px" }}>{counter}</span>
+        <button onClick={increaseCounter}>+</button> */}
+
+        <button onClick={() => setCounter(counter - 1)}>-</button>
+        <span style={{ margin: "10px" }}>{counter}</span>
+        <button onClick={() => setCounter(counter + 1)}>+</button>
+      </header>
     </div>
   )
 }
